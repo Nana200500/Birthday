@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAPPY BIRTHDAY BBG ACHIAA ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Poppins:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+  margin:0; padding:0;
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+  color:#fff;
+  background: linear-gradient(120deg,#ff0000,#ff69b4,#9c27b0,#000000,#ffffff);
+  background-size: 1000% 1000%;
+  animation: gradientBG 32s ease infinite;
+  position:relative;
+}
+
+/* Gradient animation */
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  12.5%{background-position:20% 50%;}
+  25%{background-position:40% 50%;}
+  37.5%{background-position:60% 50%;}
+  50%{background-position:80% 50%;}
+  62.5%{background-position:100% 50%;}
+  75%{background-position:80% 50%;}
+  87.5%{background-position:60% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Floating hearts + sparkles */
+.heart {
+  position:fixed;
+  font-size:14px;
+  opacity:0.6;
+  animation: floatUp linear infinite;
+  color:#ff69b4;
+  text-shadow:0 0 4px #fff;
+}
+@keyframes floatUp { 0%{transform:translateY(100vh) rotate(0deg);} 100%{transform:translateY(-10vh) rotate(360deg);} }
+
+.sparkle {
+  position:fixed;
+  width:2px; height:2px;
+  background:rgba(255,255,255,0.8);
+  border-radius:50%;
+  opacity:0.7;
+  animation: sparkleAnim linear infinite;
+}
+@keyframes sparkleAnim {0%{transform:translateY(100vh);}100%{transform:translateY(-10vh);}}
+
+/* Heartbeat animated main hearts */
+#bbgHeart {
+  color:white;
+  font-weight:bold;
+  font-size:3.5rem;
+  text-shadow:0 0 2px #9c27b0,0 0 4px #fff;
+  display:inline-block;
+  animation: heartbeat 1.2s infinite;
+  margin-bottom:20px;
+}
+@keyframes heartbeat {
+  0%,100%{transform:scale(1);}
+  25%{transform:scale(1.1);}
+  50%{transform:scale(1.2);}
+  75%{transform:scale(1.1);}
+}
+
+/* Happy Birthday Title */
+#happyTitle {
+  font-size:4rem;
+  font-weight:bold;
+  color:#9c27b0;
+  text-shadow:0 0 2px #fff;
+  margin:30px 0 10px 0;
+  text-align:center;
+  animation: fadeInTitle 2s ease-in-out;
+}
+@keyframes fadeInTitle { 0%{opacity:0; transform:translateY(-20px);} 100%{opacity:1; transform:translateY(0);} }
+
+/* Container */
+.container {
+  width:90%; max-width:980px;
+  margin:0 auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+/* Picture grid 2x2 */
+.picture-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap:10px;
+  width:100%;
+  max-width:800px;
+  margin:20px auto;
+}
+.picture-grid img {
+  width:100%;
+  border-radius:12px;
+  height:auto;
+  animation: picPulse 6s infinite alternate;
+}
+@keyframes picPulse {
+  0%{transform:scale(1);}
+  50%{transform:scale(1.03);}
+  100%{transform:scale(1);}
+}
+
+/* Speech */
+.speech {
+  font-family:'Playfair Display', serif;
+  font-size:1.2rem;
+  color:#ffe6f0;
+  max-width:800px;
+  margin:20px auto;
+  line-height:1.5;
+  opacity:0;
+  animation: fadeInSpeech 2s ease-in-out forwards;
+}
+@keyframes fadeInSpeech { 0%{opacity:0;} 100%{opacity:1;} }
+
+/* Video container with fire hearts */
+.video-container {
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:40px auto;
+  max-width:400px;
+}
+.video-container video {
+  width:180px; height:320px;
+  border-radius:18px;
+  box-shadow:0 8px 30px rgba(0,0,0,.5);
+  z-index:1;
+}
+.fire-heart {
+  font-size:60px;
+  animation: heartbeat 1.2s infinite;
+  color:red;
+  text-shadow:0 0 15px orange,0 0 30px yellow,0 0 45px red;
+  display:flex; align-items:center; justify-content:center;
+}
+.fire-heart.left { margin-right:10px; z-index:2; }
+.fire-heart.right { margin-left:10px; z-index:2; }
+
+/* Lyrics section */
+.lyrics {
+  font-family:'Dancing Script',cursive;
+  font-size:1.4rem;
+  color:#ffe6f0;
+  margin:30px auto;
+  max-width:800px;
+  height:120px;
+  overflow-y:auto;
+  position:relative;
+}
+#visualizer {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  opacity:0.2;
+  z-index:0;
+}
+
+/* Footers */
+footer {
+  display:block;
+  margin:10px 0;
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.8);
+}
+footer + footer {
+  font-size:0.8rem;
+  margin-bottom:40px;
+  color:rgba(255,255,255,0.6);
+}
+
+/* Popup modal */
+#popupModal {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+#popupContent {
+  background:#1a1a1a;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  color:#fff;
+  max-width:300px;
+}
+.popupBtn {
+  margin:10px 5px 0 5px;
+  padding:8px 16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  color:#fff;
+}
+.popupBtn.ok { background:linear-gradient(90deg,#9c27b0,#ff69b4); }
+.popupBtn.close { background:#777; }
+</style>
+</head>
+<body>
+
+<!-- Floating Hearts + Sparkles -->
+<div id="heartsContainer"></div>
+
+<!-- Popup -->
+<div id="popupModal">
+  <div id="popupContent">
+    <p>Welcome to your BDAY site BBG!</p>
+    <button class="popupBtn ok">OK</button>
+    <button class="popupBtn close">Close</button>
+  </div>
+</div>
+
+<div class="container">
+  <div id="happyTitle">HAPPY BIRTHDAY</div>
+  <div id="bbgHeart">BBG ACHIAA ❤️</div>
+
+  <!-- Picture Grid -->
+  <div class="picture-grid">
+    <img src="pic1.png" alt="Pic 1">
+    <img src="pic2.png" alt="Pic 2">
+    <img src="pic4.png" alt="Pic 4">
+    <img src="pic5.png" alt="Pic 5">
+  </div>
+
+  <!-- Speech -->
+  <div class="speech" id="speech">
+    Another year older, but don’t worry — you’re still younger than you’ll be next year! I’m so grateful to have you in my life — you’re not just a friend, you’re family. Thank you for all the laughter, the late-night talks, the crazy fights 😂, and the endless support 🔥🔥🔥
+  </div>
+
+  <!-- Video loop with fire hearts -->
+  <div class="video-container">
+    <div class="fire-heart left">❤️</div>
+    <video autoplay muted loop playsinline>
+      <source src="vid1.mp4" type="video/mp4">
+    </video>
+    <div class="fire-heart right">❤️</div>
+  </div>
+
+  <!-- Lyrics with visualizer -->
+  <div class="lyrics">
+    <canvas id="visualizer"></canvas>
+    <div id="lyricLine" style="position:relative; z-index:1;"></div>
+  </div>
+
+  <!-- Footers -->
+  <footer>Made with ❤️ just for you</footer>
+  <footer>&copy; Nana B</footer>
+  <footer>Colourful background</footer>
+</div>
+
+<!-- Audio -->
+<audio id="audio" src="song.mp3" autoplay loop></audio>
+
+<script>
+// Floating Hearts + Sparkles
+const heartsContainer = document.getElementById('heartsContainer');
+for(let i=0;i<25;i++){
+  const h = document.createElement('div');
+  h.className='heart';
+  h.textContent='❤️';
+  h.style.left=Math.random()*95+'%';
+  h.style.fontSize=(8+Math.random()*8)+'px';
+  h.style.animationDuration=(5+Math.random()*15)+'s';
+  h.style.opacity=0.4+Math.random()*0.6;
+  heartsContainer.appendChild(h);
+}
+for(let i=0;i<50;i++){
+  const s=document.createElement('div');
+  s.className='sparkle';
+  s.style.left=Math.random()*95+'%';
+  s.style.width=Math.random()*2+1+'px';
+  s.style.height=Math.random()*2+1+'px';
+  s.style.animationDuration=(3+Math.random()*5)+'s';
+  heartsContainer.appendChild(s);
+}
+
+// Lyrics scrollable
+const lyricLines=[
+  "But every time she asks me, 'Do I look okay?'",
+  "I say, when I see your face, there's not a thing that I would change,",
+  "Cause you're amazing just the way you are.",
+  "And when you smile, the whole world stops and stares for a while,",
+  "Cause girl, you're amazing just the way you are. Yeah.",
+  "Her lips, her lips, I could kiss them all day if she'd let me.",
+  "Her laugh, her laugh, she hates but I think it's so sexy.",
+  "She's so beautiful, uh, and I tell her every day."
+];
+const lyricLineEl=document.getElementById('lyricLine');
+let currentLyric=0;
+function showLyrics(){
+  lyricLineEl.textContent=lyricLines[currentLyric];
+  currentLyric=(currentLyric+1)%lyricLines.length;
+}
+showLyrics();
+setInterval(showLyrics,4000);
+
+// Audio visualizer
+const audioEl=document.getElementById('audio');
+const canvas=document.getElementById('visualizer');
+const ctx=canvas.getContext('2d');
+canvas.width=canvas.offsetWidth;
+canvas.height=canvas.offsetHeight;
+const audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+const analyser=audioCtx.createAnalyser();
+const source=audioCtx.createMediaElementSource(audioEl);
+source.connect(analyser);
+analyser.connect(audioCtx.destination);
+analyser.fftSize=256;
+const bufferLength=analyser.frequencyBinCount;
+const dataArray=new Uint8Array(bufferLength);
+function drawVisualizer(){
+  requestAnimationFrame(drawVisualizer);
+  analyser.getByteFrequencyData(dataArray);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const barWidth=(canvas.width/bufferLength)*2.5;
+  let x=0;
+  for(let i=0;i<bufferLength;i++){
+    const barHeight=dataArray[i]/2;
+    ctx.fillStyle='rgba(255,192,203,0.3)';
+    ctx.fillRect(x,canvas.height-barHeight,barWidth,barHeight);
+    x+=barWidth+1;
+  }
+}
+drawVisualizer();
+
+// Popup
+const popup=document.getElementById('popupModal');
+const okBtn=popup.querySelector('.ok');
+const closeBtn=popup.querySelector('.close');
+okBtn.onclick=()=>{popup.style.display='none'; audioEl.play();};
+closeBtn.onclick=()=>{window.close();};
+</script>
+</body>
+</html>
