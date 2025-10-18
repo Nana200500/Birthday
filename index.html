@@ -13,22 +13,21 @@
   --red:#ff3b3b;
   --pink:#ff77b9;
   --purple:#b26fff;
-  --white:#ffffff;
   --blue:#4da6ff;
-  --bg-step-duration:3s; /* user wanted ~3s */
+  --bg-step-duration:3s; /* ~3s per color step */
   --max-width:480px;
   --card-radius:14px;
 }
 
-/* page-wide gradient animation */
+/* page-wide gradient animation (NO WHITE) */
 html,body{
   height:100%;
   margin:0;
-  font-family:'Poppins',system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-  color:var(--white);
-  background: linear-gradient(120deg,var(--red),var(--pink),var(--purple),var(--white),var(--blue));
+  font-family:'Satisfy',system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+  color:#fff;
+  background: linear-gradient(120deg,var(--red),var(--pink),var(--purple),var(--blue));
   background-size: 500% 500%;
-  animation: bgShift calc(var(--bg-step-duration) * 5) linear infinite;
+  animation: bgShift calc(var(--bg-step-duration) * 4) linear infinite;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
@@ -36,10 +35,9 @@ html,body{
 }
 @keyframes bgShift{
   0%{background-position:0% 50%}
-  20%{background-position:25% 50%}
-  40%{background-position:50% 50%}
-  60%{background-position:75% 50%}
-  80%{background-position:100% 50%}
+  25%{background-position:33% 50%}
+  50%{background-position:66% 50%}
+  75%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
 
@@ -67,7 +65,7 @@ body { opacity: 1; transition: opacity 900ms ease; }
 .titleSparkle::after{
   content:'';
   position:absolute; inset:0;
-  background:linear-gradient(90deg, rgba(255,255,255,0.28), transparent, rgba(255,255,255,0.28));
+  background:linear-gradient(90deg, rgba(255,255,255,0.22), transparent, rgba(255,255,255,0.22));
   mix-blend-mode:screen;
   animation: shimmer 3.6s linear infinite;
   pointer-events:none;
@@ -117,7 +115,7 @@ body { opacity: 1; transition: opacity 900ms ease; }
   background: rgba(255,255,255,0.04);
   border-radius:12px;
   padding:14px;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Caveat', cursive;
   font-size:1.05rem;
   color:#130515;
   box-shadow: 0 10px 30px rgba(0,0,0,0.22);
@@ -239,7 +237,7 @@ She's so beautiful, uh, and I tell her every day.
 <script>
 /* ---------- Popup and page reveal (OK starts audio) ---------- */
 window.addEventListener('load', ()=> {
-  const ok = confirm("THIS IS FOR YOU BBG ❤️\\n\\nOK — open the site\\nCancel — close");
+  const ok = confirm("THIS IS FOR YOU BBG ❤️");
   if(!ok){
     document.body.innerHTML = '<h2 style="color:#fff;text-align:center;margin-top:40vh">Maybe next time 💔</h2>';
     return;
@@ -249,7 +247,6 @@ window.addEventListener('load', ()=> {
   // autoplay background song (allowed because user confirmed)
   const song = document.getElementById('song');
   song.play().catch(()=>{ /* some browsers still block autoplay */ });
-  // try to resume audio context if needed later by visualizer
   // small confetti burst to celebrate
   launchConfetti(28);
 });
@@ -354,7 +351,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 /* small confetti function */
 function launchConfetti(count){
-  const colors = ['#ff3b3b','#ff77b9','#b26fff','#ffffff','#4da6ff'];
+  const colors = ['#ff3b3b','#ff77b9','#b26fff','#4da6ff'];
   for(let i=0;i<count;i++){
     const el = document.createElement('div');
     el.className = 'confetti-piece';
@@ -381,106 +378,6 @@ function launchConfetti(count){
     this.removeEventListener(evt, resumeOnce);
   });
 });
-</script>
-</body>
-</html><div class="heart">❤️</div><div class="heart">💖</div><div class="heart">💜</div>
-<div class="heart">💕</div><div class="heart">💗</div><div class="heart">💛</div>
-<div class="heart">💚</div><div class="heart">💓</div><div class="heart">💞</div>
-
-<!-- Titles -->
-<div class="happyBirthday">HAPPY BIRTHDAY</div>
-
-<!-- Pictures with Labels -->
-<div class="picContainer">
-  <img src="pic1.png" alt="PRINCESS"><div class="picLabel">PRINCESS</div>
-  <img src="pic2.png" alt="ABENA"><div class="picLabel">ABENA</div>
-  <img src="pic5.png" alt="OTCHERE"><div class="picLabel">OTCHERE</div>
-  <img src="pic4.png" alt="ACHIAA my BBG❤️"><div class="picLabel">ACHIAA <span class="my">my</span> BBG❤️</div>
-</div>
-
-<!-- Speech -->
-<div class="speech">
-  Another year older, but don’t worry — you’re still younger than you’ll be next year! I’m so grateful to have you in my life — you’re not just a friend, you’re family. Thank you for all the laughter, the late-night talks, the crazy fights😂, and the endless support🔥🔥🔥
-</div>
-
-<!-- Videos -->
-<video id="vid1" muted loop autoplay playsinline>
-  <source src="vid1.mp4" type="video/mp4">
-</video>
-
-<button id="playAudio">▶ Play Song</button>
-
-<video id="vid2" muted loop autoplay playsinline>
-  <source src="vid2.mp4" type="video/mp4">
-</video>
-
-<!-- Lyrics -->
-<div class="lyricsContainer">
-  <canvas id="visualizer"></canvas>
-  <div class="lyricsLabel">Lyrics</div>
-  <div class="lyricsText">
-    But every time she asks me, "Do I look okay?"<br>
-    I say, when I see your face, there's not a thing that I would change,<br>
-    Cause you're amazing just the way you are.<br>
-    And when you smile, the whole world stops and stares for a while,<br>
-    'Cause girl, you're amazing just the way you are. Yeah.<br>
-    Her lips, her lips, I could kiss them all day if she'd let me.<br>
-    Her laugh, her laugh, she hates but I think it's so sexy.<br>
-    She's so beautiful, uh, and I tell her every day.
-  </div>
-</div>
-
-<!-- Footers -->
-<footer>Made with ❤️ just for you</footer>
-<footer>&copy; Nana B</footer>
-<footer><span class="footerHeart">❤️</span> Colourful Background <span class="footerHeart">❤️</span></footer>
-
-<!-- Audio -->
-<audio id="audio" src="song.mp3" loop></audio>
-
-<script>
-  const audioEl = document.getElementById('audio');
-  document.getElementById('playAudio').addEventListener('click', ()=>{ audioEl.play(); });
-
-  const canvas = document.getElementById('visualizer');
-  const ctx = canvas.getContext('2d');
-  canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight;
-  let audioCtx, analyser, sourceNode, dataArray, bufferLength, rafId;
-
-  function createAudioNodes(){
-    if(audioCtx) return;
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    analyser = audioCtx.createAnalyser();
-    bufferLength = analyser.frequencyBinCount = 512;
-    dataArray = new Uint8Array(bufferLength);
-    sourceNode = audioCtx.createMediaElementSource(audioEl);
-    sourceNode.connect(analyser);
-    analyser.connect(audioCtx.destination);
-  }
-
-  function drawVisualizer(){
-    if(!analyser) return;
-    analyser.getByteFrequencyData(dataArray);
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    const barCount = 60;
-    const barWidth = canvas.width / barCount;
-    for(let i=0;i<barCount;i++){
-      const val = dataArray[i];
-      ctx.fillStyle = `rgba(255,255,255,${val/255})`;
-      ctx.fillRect(i*barWidth, canvas.height - val/2, barWidth*0.6, val/2);
-    }
-    rafId = requestAnimationFrame(drawVisualizer);
-  }
-
-  audioEl.addEventListener('play', ()=>{
-    createAudioNodes();
-    drawVisualizer();
-  });
-
-  window.addEventListener('resize', ()=>{
-    canvas.width = canvas.clientWidth;
-    canvas.height = canvas.clientHeight;
-  });
 </script>
 </body>
 </html>
