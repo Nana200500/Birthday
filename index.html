@@ -7,18 +7,16 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script&family=Montserrat:wght@400;700&display=swap');
 
-  /* Body & Gradient Animation */
   body {
-    margin: 0;
+    margin:0;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     background: linear-gradient(120deg, #ff0000, #ff4fa8, #9c27b0, #000000, #ffffff);
     background-size: 500% 500%;
-    animation: gradientBG 16s ease infinite;
+    animation: gradientBG 12s ease infinite;
     color: #fff;
     text-align: center;
   }
-
   @keyframes gradientBG {
     0% {background-position:0% 50%;}
     20% {background-position:25% 50%;}
@@ -28,7 +26,7 @@
     100% {background-position:0% 50%;}
   }
 
-  /* Floating Hearts with shimmer */
+  /* Floating hearts */
   .heart {
     position: fixed;
     font-size: 16px;
@@ -36,16 +34,8 @@
     animation: float 12s linear infinite, shimmer 3s ease-in-out infinite alternate;
     pointer-events: none;
   }
-  @keyframes float {
-    0% {transform: translateY(100vh) rotate(0deg);}
-    100% {transform: translateY(-10vh) rotate(360deg);}
-  }
-  @keyframes shimmer {
-    0% {text-shadow:0 0 2px #fff,0 0 4px #ffb6ff;}
-    50% {text-shadow:0 0 5px #fff,0 0 10px #ffb6ff;}
-    100% {text-shadow:0 0 2px #fff,0 0 4px #ffb6ff;}
-  }
-
+  @keyframes float {0% {transform: translateY(100vh) rotate(0deg);} 100% {transform: translateY(-10vh) rotate(360deg);}}
+  @keyframes shimmer {0% {text-shadow:0 0 2px #fff,0 0 4px #ffb6ff;} 50% {text-shadow:0 0 5px #fff,0 0 10px #ffb6ff;} 100% {text-shadow:0 0 2px #fff,0 0 4px #ffb6ff;}}
   .heart:nth-child(1){left:5%; animation-duration:10s;}
   .heart:nth-child(2){left:15%; animation-duration:14s;}
   .heart:nth-child(3){left:25%; animation-duration:12s;}
@@ -64,13 +54,13 @@
     text-transform: uppercase;
     text-shadow: 0 0 4px white;
     margin: 20px 0 10px;
-    animation: hbBounce 2s ease-in-out infinite;
+    animation: hbBounce 2s ease-in-out infinite, sparkle 2s infinite;
     display: inline-block;
   }
-
-  @keyframes hbBounce {
-    0%,100% {transform: scale(1);}
-    50% {transform: scale(1.05);}
+  @keyframes hbBounce {0%,100% {transform: scale(1);} 50% {transform: scale(1.05);}}
+  @keyframes sparkle {
+    0%,100%{text-shadow: 0 0 3px #fff;}
+    50%{text-shadow: 0 0 8px #fff;}
   }
 
   /* Pictures & Labels */
@@ -78,109 +68,46 @@
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 30px;
+    text-transform: uppercase;
+    animation: sparkle 2s infinite;
   }
   .picLabel .my {
     font-family: 'Dancing Script', cursive;
     font-weight: 400;
     animation: heartbeat 1.5s ease-in-out infinite;
     display: inline-block;
+    text-transform: none;
   }
-  @keyframes heartbeat {
-    0%,100% {transform: scale(1);}
-    50% {transform: scale(1.08);}
-  }
+  @keyframes heartbeat {0%,100% {transform: scale(1);} 50% {transform: scale(1.08);} }
 
-  .picContainer img {
-    width: 40%;
-    margin: 10px 0;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  }
+  .picContainer img { width: 40%; margin: 10px 0; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
 
   /* Speech */
-  .speech {
-    font-family: "Courier New", monospace;
-    font-weight: 400;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 20px auto;
-    color: #fff;
-    line-height: 1.5;
-    opacity: 0.9;
-  }
+  .speech { font-family: "Courier New", monospace; font-weight: 400; font-size: 1.1rem; max-width: 600px; margin: 20px auto; color: #fff; line-height: 1.5; opacity: 0.9; }
 
   /* Videos */
-  video {
-    width: 300px;
-    height: 533px;
-    margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.5);
-  }
+  video { width: 300px; height: 533px; margin: 20px 0; border-radius: 12px; box-shadow: 0 6px 25px rgba(0,0,0,0.5); }
 
   /* Audio Play Button */
-  #playAudio {
-    display:block;
-    margin: 10px auto 20px;
-    padding:10px 20px;
-    font-size:1rem;
-    font-weight:700;
-    border:none;
-    border-radius:999px;
-    cursor:pointer;
-    background: linear-gradient(90deg, #ff6fb1, #b000ff);
-    color:#fff;
-  }
+  #playAudio { display:block; margin: 10px auto 20px; padding:10px 20px; font-size:1rem; font-weight:700; border:none; border-radius:999px; cursor:pointer; background: linear-gradient(90deg, #ff6fb1, #b000ff); color:#fff; }
 
   /* Lyrics */
-  .lyricsContainer {
-    position: relative;
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.25);
-    overflow-y: auto;
-    max-height: 180px;
-    text-align: left;
-  }
-  .lyricsLabel {
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .lyricsText {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.1rem;
-    line-height: 1.5;
-  }
-
-  /* Visualizer behind lyrics */
-  canvas#visualizer {
-    position: absolute;
-    top:0; left:0;
-    width:100%;
-    height:100%;
-    border-radius: 10px;
-    z-index:-1;
-    opacity:0.25;
-  }
+  .lyricsContainer { position: relative; width: 90%; max-width: 600px; margin: 20px auto; padding: 10px; border-radius: 10px; background: rgba(0,0,0,0.25); overflow-y: auto; max-height: 180px; text-align: left; }
+  .lyricsLabel { font-weight: 700; margin-bottom: 8px; }
+  .lyricsText { font-family: 'Dancing Script', cursive; font-size: 1.1rem; line-height: 1.5; }
+  canvas#visualizer { position: absolute; top:0; left:0; width:100%; height:100%; border-radius:10px; z-index:-1; opacity:0.25; }
 
   /* Footers */
-  footer {
-    margin: 10px 0;
-    font-size: 0.9rem;
-    color: #fff;
-  }
-
-  .footerHeart {
-    font-size: 1.2rem;
-    vertical-align: middle;
-    margin: 0 4px;
-  }
+  footer { margin: 10px 0; font-size: 0.9rem; color: #fff; }
+  .footerHeart { font-size: 1.2rem; vertical-align: middle; margin: 0 4px; }
 </style>
 </head>
 <body>
+
+<script>
+  const proceed = confirm("THIS IS FOR YOU BBG ❤️");
+  if(!proceed){ window.close(); }
+</script>
 
 <!-- Floating Hearts -->
 <div class="heart">❤️</div><div class="heart">💖</div><div class="heart">💜</div>
@@ -194,8 +121,8 @@
 <div class="picContainer">
   <img src="pic1.png" alt="PRINCESS"><div class="picLabel">PRINCESS</div>
   <img src="pic2.png" alt="ABENA"><div class="picLabel">ABENA</div>
-  <img src="pic4.png" alt="OTCHERE"><div class="picLabel">OTCHERE</div>
-  <img src="pic5.png" alt="ACHIAA my BBG❤️"><div class="picLabel">ACHIAA <span class="my">my</span> BBG❤️</div>
+  <img src="pic5.png" alt="OTCHERE"><div class="picLabel">OTCHERE</div>
+  <img src="pic4.png" alt="ACHIAA my BBG❤️"><div class="picLabel">ACHIAA <span class="my">my</span> BBG❤️</div>
 </div>
 
 <!-- Speech -->
@@ -204,14 +131,13 @@
 </div>
 
 <!-- Videos -->
-<video id="vid1" muted loop playsinline>
+<video id="vid1" muted loop autoplay playsinline>
   <source src="vid1.mp4" type="video/mp4">
 </video>
 
-<!-- Audio Play Button -->
 <button id="playAudio">▶ Play Song</button>
 
-<video id="vid2" muted loop playsinline>
+<video id="vid2" muted loop autoplay playsinline>
   <source src="vid2.mp4" type="video/mp4">
 </video>
 
@@ -240,18 +166,12 @@
 <audio id="audio" src="song.mp3" loop></audio>
 
 <script>
-  // Play button functionality
   const audioEl = document.getElementById('audio');
-  document.getElementById('playAudio').addEventListener('click', ()=>{
-    audioEl.play();
-  });
+  document.getElementById('playAudio').addEventListener('click', ()=>{ audioEl.play(); });
 
-  // Audio visualizer behind lyrics
   const canvas = document.getElementById('visualizer');
   const ctx = canvas.getContext('2d');
-  canvas.width = canvas.clientWidth;
-  canvas.height = canvas.clientHeight;
-
+  canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight;
   let audioCtx, analyser, sourceNode, dataArray, bufferLength, rafId;
 
   function createAudioNodes(){
