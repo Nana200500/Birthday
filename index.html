@@ -3,348 +3,347 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HAPPY BIRTHDAY BBG ACHIAA ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Poppins:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<title>BBG❤️ Achiaa Birthday</title>
 <style>
-body {
-  margin:0; padding:0;
-  font-family:'Poppins',sans-serif;
-  overflow-x:hidden;
-  color:#fff;
-  background: linear-gradient(120deg,#ff0000,#ff69b4,#9c27b0,#000000,#ffffff);
-  background-size: 1000% 1000%;
-  animation: gradientBG 32s ease infinite;
-  position:relative;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script&family=Montserrat:wght@400;700&display=swap');
 
-/* Gradient animation */
-@keyframes gradientBG {
-  0%{background-position:0% 50%;}
-  12.5%{background-position:20% 50%;}
-  25%{background-position:40% 50%;}
-  37.5%{background-position:60% 50%;}
-  50%{background-position:80% 50%;}
-  62.5%{background-position:100% 50%;}
-  75%{background-position:80% 50%;}
-  87.5%{background-position:60% 50%;}
-  100%{background-position:0% 50%;}
-}
+  /* Body & Gradient Animation */
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(120deg, #ff0000, #ff4fa8, #9c27b0, #000000, #ffffff);
+    background-size: 500% 500%;
+    animation: gradientBG 16s ease infinite;
+    color: #fff;
+    text-align: center;
+  }
 
-/* Floating hearts + sparkles */
-.heart {
-  position:fixed;
-  font-size:14px;
-  opacity:0.6;
-  animation: floatUp linear infinite;
-  color:#ff69b4;
-  text-shadow:0 0 4px #fff;
-}
-@keyframes floatUp { 0%{transform:translateY(100vh) rotate(0deg);} 100%{transform:translateY(-10vh) rotate(360deg);} }
+  @keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    20% {background-position:25% 50%;}
+    40% {background-position:50% 50%;}
+    60% {background-position:75% 50%;}
+    80% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+  }
 
-.sparkle {
-  position:fixed;
-  width:2px; height:2px;
-  background:rgba(255,255,255,0.8);
-  border-radius:50%;
-  opacity:0.7;
-  animation: sparkleAnim linear infinite;
-}
-@keyframes sparkleAnim {0%{transform:translateY(100vh);}100%{transform:translateY(-10vh);}}
+  /* Floating Hearts with shimmer */
+  .heart {
+    position: fixed;
+    font-size: 16px;
+    opacity: 0.7;
+    animation: float 12s linear infinite, shimmer 3s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+  @keyframes float {
+    0% {transform: translateY(100vh) rotate(0deg);}
+    100% {transform: translateY(-10vh) rotate(360deg);}
+  }
+  @keyframes shimmer {
+    0% {text-shadow:0 0 2px #fff,0 0 4px #ffb6ff;}
+    50% {text-shadow:0 0 5px #fff,0 0 10px #ffb6ff;}
+    100% {text-shadow:0 0 2px #fff,0 0 4px #ffb6ff;}
+  }
 
-/* Heartbeat animated main hearts */
-#bbgHeart {
-  color:white;
-  font-weight:bold;
-  font-size:3.5rem;
-  text-shadow:0 0 2px #9c27b0,0 0 4px #fff;
-  display:inline-block;
-  animation: heartbeat 1.2s infinite;
-  margin-bottom:20px;
-}
-@keyframes heartbeat {
-  0%,100%{transform:scale(1);}
-  25%{transform:scale(1.1);}
-  50%{transform:scale(1.2);}
-  75%{transform:scale(1.1);}
-}
+  .heart:nth-child(1){left:5%; animation-duration:10s;}
+  .heart:nth-child(2){left:15%; animation-duration:14s;}
+  .heart:nth-child(3){left:25%; animation-duration:12s;}
+  .heart:nth-child(4){left:35%; animation-duration:16s;}
+  .heart:nth-child(5){left:45%; animation-duration:11s;}
+  .heart:nth-child(6){left:55%; animation-duration:13s;}
+  .heart:nth-child(7){left:65%; animation-duration:15s;}
+  .heart:nth-child(8){left:75%; animation-duration:12s;}
+  .heart:nth-child(9){left:85%; animation-duration:14s;}
 
-/* Happy Birthday Title */
-#happyTitle {
-  font-size:4rem;
-  font-weight:bold;
-  color:#9c27b0;
-  text-shadow:0 0 2px #fff;
-  margin:30px 0 10px 0;
-  text-align:center;
-  animation: fadeInTitle 2s ease-in-out;
-}
-@keyframes fadeInTitle { 0%{opacity:0; transform:translateY(-20px);} 100%{opacity:1; transform:translateY(0);} }
+  /* Titles */
+  .happyBirthday {
+    font-size: 3rem;
+    font-weight: 900;
+    color: purple;
+    text-transform: uppercase;
+    text-shadow: 0 0 4px white;
+    margin: 20px 0 10px;
+    animation: hbBounce 2s ease-in-out infinite;
+    display: inline-block;
+  }
 
-/* Container */
-.container {
-  width:90%; max-width:980px;
-  margin:0 auto;
-  text-align:center;
-  position:relative;
-  z-index:2;
-}
+  @keyframes hbBounce {
+    0%,100% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+  }
 
-/* Picture grid 2x2 */
-.picture-grid {
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap:10px;
-  width:100%;
-  max-width:800px;
-  margin:20px auto;
-}
-.picture-grid img {
-  width:100%;
-  border-radius:12px;
-  height:auto;
-  animation: picPulse 6s infinite alternate;
-}
-@keyframes picPulse {
-  0%{transform:scale(1);}
-  50%{transform:scale(1.03);}
-  100%{transform:scale(1);}
-}
+  /* Pictures & Labels */
+  .picLabel {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  .picLabel .my {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    display: inline-block;
+  }
+  @keyframes heartbeat {
+    0%,100% {transform: scale(1);}
+    50% {transform: scale(1.08);}
+  }
 
-/* Speech */
-.speech {
-  font-family:'Playfair Display', serif;
-  font-size:1.2rem;
-  color:#ffe6f0;
-  max-width:800px;
-  margin:20px auto;
-  line-height:1.5;
-  opacity:0;
-  animation: fadeInSpeech 2s ease-in-out forwards;
-}
-@keyframes fadeInSpeech { 0%{opacity:0;} 100%{opacity:1;} }
+  .picContainer img {
+    width: 40%;
+    margin: 10px 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  }
 
-/* Video container with fire hearts */
-.video-container {
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin:40px auto;
-  max-width:400px;
-}
-.video-container video {
-  width:180px; height:320px;
-  border-radius:18px;
-  box-shadow:0 8px 30px rgba(0,0,0,.5);
-  z-index:1;
-}
-.fire-heart {
-  font-size:60px;
-  animation: heartbeat 1.2s infinite;
-  color:red;
-  text-shadow:0 0 15px orange,0 0 30px yellow,0 0 45px red;
-  display:flex; align-items:center; justify-content:center;
-}
-.fire-heart.left { margin-right:10px; z-index:2; }
-.fire-heart.right { margin-left:10px; z-index:2; }
+  /* Speech */
+  .speech {
+    font-family: "Courier New", monospace;
+    font-weight: 400;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 20px auto;
+    color: #fff;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
 
-/* Lyrics section */
-.lyrics {
-  font-family:'Dancing Script',cursive;
-  font-size:1.4rem;
-  color:#ffe6f0;
-  margin:30px auto;
-  max-width:800px;
-  height:120px;
-  overflow-y:auto;
-  position:relative;
-}
-#visualizer {
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  opacity:0.2;
-  z-index:0;
-}
+  /* Videos */
+  video {
+    width: 300px;
+    height: 533px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+  }
 
-/* Footers */
-footer {
-  display:block;
-  margin:10px 0;
-  font-size:0.9rem;
-  color:rgba(255,255,255,0.8);
-}
-footer + footer {
-  font-size:0.8rem;
-  margin-bottom:40px;
-  color:rgba(255,255,255,0.6);
-}
+  /* Audio Play Button */
+  #playAudio {
+    display:block;
+    margin: 10px auto 20px;
+    padding:10px 20px;
+    font-size:1rem;
+    font-weight:700;
+    border:none;
+    border-radius:999px;
+    cursor:pointer;
+    background: linear-gradient(90deg, #ff6fb1, #b000ff);
+    color:#fff;
+  }
 
-/* Popup modal */
-#popupModal {
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-#popupContent {
-  background:#1a1a1a;
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
-  color:#fff;
-  max-width:300px;
-}
-.popupBtn {
-  margin:10px 5px 0 5px;
-  padding:8px 16px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:bold;
-  color:#fff;
-}
-.popupBtn.ok { background:linear-gradient(90deg,#9c27b0,#ff69b4); }
-.popupBtn.close { background:#777; }
+  /* Lyrics */
+  .lyricsContainer {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.25);
+    overflow-y: auto;
+    max-height: 180px;
+    text-align: left;
+  }
+  .lyricsLabel {
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .lyricsText {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  /* Visualizer behind lyrics */
+  canvas#visualizer {
+    position: absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    z-index:-1;
+    opacity:0.25;
+  }
+
+  /* Footers */
+  footer {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #fff;
+  }
+
+  .footerHeart {
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin: 0 4px;
+  }
 </style>
 </head>
 <body>
 
-<!-- Floating Hearts + Sparkles -->
-<div id="heartsContainer"></div>
+<!-- Floating Hearts -->
+<div class="heart">❤️</div><div class="heart">💖</div><div class="heart">💜</div>
+<div class="heart">💕</div><div class="heart">💗</div><div class="heart">💛</div>
+<div class="heart">💚</div><div class="heart">💓</div><div class="heart">💞</div>
 
-<!-- Popup -->
-<div id="popupModal">
-  <div id="popupContent">
-    <p>Welcome to your BDAY site BBG!</p>
-    <button class="popupBtn ok">OK</button>
-    <button class="popupBtn close">Close</button>
+<!-- Titles -->
+<div class="happyBirthday">HAPPY BIRTHDAY</div>
+
+<!-- Pictures with Labels -->
+<div class="picContainer">
+  <img src="pic1.png" alt="PRINCESS"><div class="picLabel">PRINCESS</div>
+  <img src="pic2.png" alt="ABENA"><div class="picLabel">ABENA</div>
+  <img src="pic4.png" alt="OTCHERE"><div class="picLabel">OTCHERE</div>
+  <img src="pic5.png" alt="ACHIAA my BBG❤️"><div class="picLabel">ACHIAA <span class="my">my</span> BBG❤️</div>
+</div>
+
+<!-- Speech -->
+<div class="speech">
+  Another year older, but don’t worry — you’re still younger than you’ll be next year! I’m so grateful to have you in my life — you’re not just a friend, you’re family. Thank you for all the laughter, the late-night talks, the crazy fights😂, and the endless support🔥🔥🔥
+</div>
+
+<!-- Videos -->
+<video id="vid1" muted loop playsinline>
+  <source src="vid1.mp4" type="video/mp4">
+</video>
+
+<!-- Audio Play Button -->
+<button id="playAudio">▶ Play Song</button>
+
+<video id="vid2" muted loop playsinline>
+  <source src="vid2.mp4" type="video/mp4">
+</video>
+
+<!-- Lyrics -->
+<div class="lyricsContainer">
+  <canvas id="visualizer"></canvas>
+  <div class="lyricsLabel">Lyrics</div>
+  <div class="lyricsText">
+    But every time she asks me, "Do I look okay?"<br>
+    I say, when I see your face, there's not a thing that I would change,<br>
+    Cause you're amazing just the way you are.<br>
+    And when you smile, the whole world stops and stares for a while,<br>
+    'Cause girl, you're amazing just the way you are. Yeah.<br>
+    Her lips, her lips, I could kiss them all day if she'd let me.<br>
+    Her laugh, her laugh, she hates but I think it's so sexy.<br>
+    She's so beautiful, uh, and I tell her every day.
   </div>
 </div>
 
-<div class="container">
-  <div id="happyTitle">HAPPY BIRTHDAY</div>
-  <div id="bbgHeart">BBG ACHIAA ❤️</div>
-
-  <!-- Picture Grid -->
-  <div class="picture-grid">
-    <img src="pic1.png" alt="Pic 1">
-    <img src="pic2.png" alt="Pic 2">
-    <img src="pic4.png" alt="Pic 4">
-    <img src="pic5.png" alt="Pic 5">
-  </div>
-
-  <!-- Speech -->
-  <div class="speech" id="speech">
-    Another year older, but don’t worry — you’re still younger than you’ll be next year! I’m so grateful to have you in my life — you’re not just a friend, you’re family. Thank you for all the laughter, the late-night talks, the crazy fights 😂, and the endless support 🔥🔥🔥
-  </div>
-
-  <!-- Video loop with fire hearts -->
-  <div class="video-container">
-    <div class="fire-heart left">❤️</div>
-    <video autoplay muted loop playsinline>
-      <source src="vid1.mp4" type="video/mp4">
-    </video>
-    <div class="fire-heart right">❤️</div>
-  </div>
-
-  <!-- Lyrics with visualizer -->
-  <div class="lyrics">
-    <canvas id="visualizer"></canvas>
-    <div id="lyricLine" style="position:relative; z-index:1;"></div>
-  </div>
-
-  <!-- Footers -->
-  <footer>Made with ❤️ just for you</footer>
-  <footer>&copy; Nana B</footer>
-  <footer>Colourful background</footer>
-</div>
+<!-- Footers -->
+<footer>Made with ❤️ just for you</footer>
+<footer>&copy; Nana B</footer>
+<footer><span class="footerHeart">❤️</span> Colourful Background <span class="footerHeart">❤️</span></footer>
 
 <!-- Audio -->
-<audio id="audio" src="song.mp3" autoplay loop></audio>
+<audio id="audio" src="song.mp3" loop></audio>
 
 <script>
-// Floating Hearts + Sparkles
-const heartsContainer = document.getElementById('heartsContainer');
-for(let i=0;i<25;i++){
-  const h = document.createElement('div');
-  h.className='heart';
-  h.textContent='❤️';
-  h.style.left=Math.random()*95+'%';
-  h.style.fontSize=(8+Math.random()*8)+'px';
-  h.style.animationDuration=(5+Math.random()*15)+'s';
-  h.style.opacity=0.4+Math.random()*0.6;
-  heartsContainer.appendChild(h);
-}
-for(let i=0;i<50;i++){
-  const s=document.createElement('div');
-  s.className='sparkle';
-  s.style.left=Math.random()*95+'%';
-  s.style.width=Math.random()*2+1+'px';
-  s.style.height=Math.random()*2+1+'px';
-  s.style.animationDuration=(3+Math.random()*5)+'s';
-  heartsContainer.appendChild(s);
-}
+  // Play button functionality
+  const audioEl = document.getElementById('audio');
+  document.getElementById('playAudio').addEventListener('click', ()=>{
+    audioEl.play();
+  });
 
-// Lyrics scrollable
-const lyricLines=[
-  "But every time she asks me, 'Do I look okay?'",
-  "I say, when I see your face, there's not a thing that I would change,",
-  "Cause you're amazing just the way you are.",
-  "And when you smile, the whole world stops and stares for a while,",
-  "Cause girl, you're amazing just the way you are. Yeah.",
-  "Her lips, her lips, I could kiss them all day if she'd let me.",
-  "Her laugh, her laugh, she hates but I think it's so sexy.",
-  "She's so beautiful, uh, and I tell her every day."
-];
-const lyricLineEl=document.getElementById('lyricLine');
-let currentLyric=0;
-function showLyrics(){
-  lyricLineEl.textContent=lyricLines[currentLyric];
-  currentLyric=(currentLyric+1)%lyricLines.length;
-}
-showLyrics();
-setInterval(showLyrics,4000);
+  // Audio visualizer behind lyrics
+  const canvas = document.getElementById('visualizer');
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
 
-// Audio visualizer
-const audioEl=document.getElementById('audio');
-const canvas=document.getElementById('visualizer');
-const ctx=canvas.getContext('2d');
-canvas.width=canvas.offsetWidth;
-canvas.height=canvas.offsetHeight;
-const audioCtx=new (window.AudioContext||window.webkitAudioContext)();
-const analyser=audioCtx.createAnalyser();
-const source=audioCtx.createMediaElementSource(audioEl);
-source.connect(analyser);
-analyser.connect(audioCtx.destination);
-analyser.fftSize=256;
-const bufferLength=analyser.frequencyBinCount;
-const dataArray=new Uint8Array(bufferLength);
-function drawVisualizer(){
-  requestAnimationFrame(drawVisualizer);
-  analyser.getByteFrequencyData(dataArray);
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  const barWidth=(canvas.width/bufferLength)*2.5;
-  let x=0;
-  for(let i=0;i<bufferLength;i++){
-    const barHeight=dataArray[i]/2;
-    ctx.fillStyle='rgba(255,192,203,0.3)';
-    ctx.fillRect(x,canvas.height-barHeight,barWidth,barHeight);
-    x+=barWidth+1;
+  let audioCtx, analyser, sourceNode, dataArray, bufferLength, rafId;
+
+  function createAudioNodes(){
+    if(audioCtx) return;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    analyser = audioCtx.createAnalyser();
+    bufferLength = analyser.frequencyBinCount = 512;
+    dataArray = new Uint8Array(bufferLength);
+    sourceNode = audioCtx.createMediaElementSource(audioEl);
+    sourceNode.connect(analyser);
+    analyser.connect(audioCtx.destination);
   }
-}
-drawVisualizer();
 
-// Popup
-const popup=document.getElementById('popupModal');
-const okBtn=popup.querySelector('.ok');
-const closeBtn=popup.querySelector('.close');
-okBtn.onclick=()=>{popup.style.display='none'; audioEl.play();};
-closeBtn.onclick=()=>{window.close();};
+  function drawVisualizer(){
+    if(!analyser) return;
+    analyser.getByteFrequencyData(dataArray);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const barCount = 60;
+    const barWidth = canvas.width / barCount;
+    for(let i=0;i<barCount;i++){
+      const val = dataArray[i];
+      ctx.fillStyle = `rgba(255,255,255,${val/255})`;
+      ctx.fillRect(i*barWidth, canvas.height - val/2, barWidth*0.6, val/2);
+    }
+    rafId = requestAnimationFrame(drawVisualizer);
+  }
+
+  audioEl.addEventListener('play', ()=>{
+    createAudioNodes();
+    drawVisualizer();
+  });
+
+  window.addEventListener('resize', ()=>{
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  });
 </script>
 </body>
-</html>
+  </html><footer><span class="footerHeart">❤️</span> Colourful Background <span class="footerHeart">❤️</span></footer>
+
+<!-- Audio -->
+<audio id="audio" src="song.mp3" loop></audio>
+
+<script>
+  // Play button functionality
+  const audioEl = document.getElementById('audio');
+  document.getElementById('playAudio').addEventListener('click', ()=>{
+    audioEl.play();
+  });
+
+  // Audio visualizer behind lyrics
+  const canvas = document.getElementById('visualizer');
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+
+  let audioCtx, analyser, sourceNode, dataArray, bufferLength, rafId;
+
+  function createAudioNodes(){
+    if(audioCtx) return;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    analyser = audioCtx.createAnalyser();
+    bufferLength = analyser.frequencyBinCount = 512;
+    dataArray = new Uint8Array(bufferLength);
+    sourceNode = audioCtx.createMediaElementSource(audioEl);
+    sourceNode.connect(analyser);
+    analyser.connect(audioCtx.destination);
+  }
+
+  functioinn drawVisualizer(){
+    if(!analyser) return;
+    analyser.getByteFrequencyData(dataArray);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const barCount = 60;
+    const barWidth = canvas.width / barCount;
+    for(let i=0;i<barCount;i++){
+      const val = dataArray[i];
+      ctx.fillStyle = `rgba(255,255,255,${val/255})`;
+      ctx.fillRect(i*barWidth, canvas.height - val/2, barWidth*0.6, val/2);
+    }
+    rafId = requestAnimationFrame(drawVisualizer);
+  }
+
+  audioEl.addEventListener('play', ()=>{
+    createAudioNodes();
+    drawVisualizer();
+  });
+
+  window.addEventListener('resize', ()=>{
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  });
+</script>
+</body>
+  </html>
